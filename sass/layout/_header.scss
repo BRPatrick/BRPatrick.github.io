@@ -1,0 +1,52 @@
+.header {
+  // this is the header//
+  height: 95vh;
+  background-image: linear-gradient(
+      /* Gradient image at .8 opacity on top of background image */ to right
+        bottom,
+      rgba($color-primary-dark-1, 0.5),
+      rgba($color-primary-dark-2, 0.5)
+    ),
+    url(../img/Aca2.jpg);
+
+  /*Background fills the page */
+  background-size: cover;
+
+  /*When re-sizing image, trims from bottom */
+  background-position: top;
+
+  /* Parent element to "logo-box/logo" classes, relative creates reference/origin for positioning */
+  position: relative;
+
+  /*Trims/shapes/crops image: Use "Clippy" tool to play with this feature*/
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+
+  margin-bottom: 3rem;
+
+
+  &__logo-box {
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+
+    animation: rotate .1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -.1s);
+  }
+
+  &__logo {
+    height: 4rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+
+    /*Centers the box, makes top/left positioning go from center rather than edge*/
+    transform: translate(-50%, -50%);
+
+    /*This is actually important to center the button within this text box*/
+    text-align: center;
+  }
+}

@@ -1,0 +1,364 @@
+/* Defines an animation called "moveInLeft" */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* Defines an animation called "moveInRight" */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* Defines an animation called "moveInBottom" */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg); } }
+
+/* *-selector individually selects all elements blocking parent/child inheritance vs html/body which considers inheritence */
+*,
+*::after,
+*::before {
+  /* Gets rid of all broser default margins/paddings/borders to build from scratch */
+  margin: 0;
+  padding: 0;
+  /*Forces box-sizing to be an inherited property, carrying over from parent element to child element*/
+  box-sizing: inherit; }
+
+html {
+  /* Using 10px makes it easier to calculate later sizes using rem: 1rem=10px, 2rem= 20px, etc. */
+  /* Default browser font-size is 16px, to get 10px: .625*16px=10px */
+  /*  Defines what 1 rem is */
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+
+body {
+  /*A good practice to put in body, making it easier to use plug-ins, *-selector above makes sure this is inherited by all elements */
+  /* border-box causes padding and border to be included in in total width/height of element for more inutuitive experience */
+  box-sizing: border-box;
+  background-color: #000; }
+
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  background: inherit; }
+  button:focus {
+    outline: 0; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #C6CBC9;
+  padding: 3rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* Removes shakiness from animation */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    /* Changes span from in-line element, to block */
+    display: block;
+    font-size: 6rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    /*Calls the custom animation we made below @keyframes*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    /*
+    animation-timing-function: ease-out; changes speed of animation
+    animation-iteration-count: 3; number of times animiation is run
+    animation-delay: 3s; delays start time of animation
+    */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.8rem;
+    animation-name: moveInRight;
+    animation-duration: 1s; }
+
+.timeline__bullet--heading {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5rem; }
+
+.timeline__paragraph {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem; }
+
+.timeline__list {
+  color: #fff;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem; }
+
+.footer__heading {
+  color: #fff;
+  text-align: center; }
+  .footer__heading--main {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem; }
+  .footer__heading--sub {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.25rem; }
+
+.footer__links {
+  text-align: center; }
+
+ion-icon {
+  color: #fff;
+  font-size: 40px; }
+
+.btn {
+  /*Pseudo states to style button/link properties */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 4rem;
+    /*Always use when giving padding/height to elements so will not overlap other elements */
+    display: inline-block;
+    border-radius: 10rem;
+    /* Transition should be on initital state of button and will be applied to all pseudo classes*/
+    transition: all 0.2s;
+    /*To provide reference for btn::after (absolute)*/
+    position: relative;
+    font-size: 1.6rem; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    /*After pseudo element -only- when we have the hoverstate */ }
+    .btn:hover::after {
+      /*Scale increases the size of the element */
+      transform: scaleX(1.4) scaleY(1.6);
+      /* Fades the animation out */
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    /* Pesudo element is treated as child of element, so % relative to original element size*/
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    /*To put this effect behind the btn */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    /*applies animation starting conditions*/
+    animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.5)), url(../img/Aca2.jpg);
+  /*Background fills the page */
+  background-size: cover;
+  /*When re-sizing image, trims from bottom */
+  background-position: top;
+  /* Parent element to "logo-box/logo" classes, relative creates reference/origin for positioning */
+  position: relative;
+  /*Trims/shapes/crops image: Use "Clippy" tool to play with this feature*/
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+  margin-bottom: 3rem; }
+  .header__logo-box {
+    position: fixed;
+    top: 4rem;
+    left: 4rem;
+    animation: rotate .1s linear infinite;
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -.1s); }
+  .header__logo {
+    height: 4rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /*Centers the box, makes top/left positioning go from center rather than edge*/
+    transform: translate(-50%, -50%);
+    /*This is actually important to center the button within this text box*/
+    text-align: center; }
+
+.timeline__line--tip {
+  width: 0.2rem;
+  height: 6rem;
+  background-image: linear-gradient(#000, #8d35ff);
+  margin-left: 20%;
+  transform: translate(-50%); }
+
+.timeline__line--main {
+  width: 0.2rem;
+  height: 100%;
+  background-color: #8d35ff;
+  top: 0;
+  left: 0;
+  position: absolute;
+  margin-left: 20%;
+  transform: translate(-50%); }
+
+.timeline__line--tail {
+  width: 0.2rem;
+  height: 3rem;
+  background-image: linear-gradient(#8d35ff, #000);
+  margin-left: 20%;
+  transform: translate(-50%);
+  margin-bottom: 3rem; }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative; }
+  .timeline__bullet {
+    display: flex;
+    align-items: center;
+    transition: all 0.5s; }
+    .timeline__bullet:focus, .timeline__bullet:hover {
+      background: linear-gradient(90deg, #000 0%, #1b1335 20%, #1b1335 50%, #000 100%);
+      outline: 0; }
+    .timeline__bullet--point {
+      height: 3rem;
+      width: 3rem;
+      border: 0.2rem solid #8d35ff;
+      background-color: #000;
+      margin-left: 20%;
+      transform: translate(-50%);
+      transform-style: preserve-3d;
+      border-radius: 50%;
+      transition: all 0.2s;
+      position: relative;
+      z-index: 1; }
+      .timeline__bullet--point:hover {
+        margin-right: 1rem;
+        /*After pseudo element -only- when we have the hoverstate */ }
+        .timeline__bullet--point:hover::after {
+          /*Scale increases the size of the element */
+          transform: scaleX(4) scaleY(4);
+          /* Fades the animation out */
+          opacity: 0; }
+      .timeline__bullet--point::after {
+        content: "";
+        /* Pesudo element is treated as child of element, so % relative to original element size*/
+        height: 100%;
+        width: 100%;
+        background-color: #8d35ff;
+        border-radius: 50%;
+        /*To put this effect behind the btn */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform: translateZ(-1px);
+        transition: all 0.4s; }
+    .timeline__bullet--heading {
+      line-height: 0;
+      display: block;
+      background-color: #000; }
+  .timeline__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .timeline__paragraph {
+    margin-left: 20%;
+    padding-top: 2rem;
+    padding-left: 3rem; }
+  .timeline__list {
+    margin-left: 0;
+    display: flex;
+    align-items: flex-start; }
+    .timeline__list--point {
+      flex-shrink: 0;
+      height: 1rem;
+      width: 1rem;
+      background-color: #8d35ff;
+      margin-left: 20%;
+      transform: translate(-50%, 127%);
+      border-radius: 50%;
+      position: relative; }
+    .timeline__list--text {
+      display: block;
+      padding-left: 1.5rem; }
+
+.container {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  margin: 2rem 0; }
+
+.collapsible:after {
+  font-family: FontAwesome;
+  content: "\f078";
+  color: #8d35ff;
+  font-weight: bold;
+  font-size: 2rem;
+  float: right;
+  margin-left: 5px; }
+
+.active:after {
+  font-family: FontAwesome;
+  content: "\f077";
+  color: #8d35ff; }
+
+.footer {
+  padding: 3rem;
+  background: linear-gradient(135deg, #8f78fd 25%, transparent 25%) -10px 0, linear-gradient(225deg, #8f78fd 25%, transparent 25%) -10px 0, linear-gradient(315deg, #4d4258 25%, transparent 25%), linear-gradient(45deg, #564d70 25%, transparent 25%);
+  background-color: #4d4258; }
+  .footer__heading--main {
+    margin: auto; }
+  .footer__heading--line {
+    margin: auto;
+    background-color: #8f78fd;
+    border: none;
+    height: 2px;
+    width: 20vw; }
+  .footer__heading--sub {
+    margin: 1rem auto;
+    width: 30vw; }
+  .footer__links {
+    margin: 2rem auto; }
+    .footer__links--contact {
+      margin: 1rem;
+      padding: 2px; }
+      .footer__links--contact:hover {
+        border-bottom: 4px solid #8f78fd; }

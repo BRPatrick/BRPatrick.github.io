@@ -1,0 +1,38 @@
+/* *-selector individually selects all elements blocking parent/child inheritance vs html/body which considers inheritence */
+*,
+*::after,
+*::before {
+  /* Gets rid of all broser default margins/paddings/borders to build from scratch */
+  margin: 0;
+  padding: 0;
+
+  /*Forces box-sizing to be an inherited property, carrying over from parent element to child element*/
+  box-sizing: inherit;
+}
+
+html {
+  /* Using 10px makes it easier to calculate later sizes using rem: 1rem=10px, 2rem= 20px, etc. */
+  /* Default browser font-size is 16px, to get 10px: .625*16px=10px */
+     /*  Defines what 1 rem is */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  /*A good practice to put in body, making it easier to use plug-ins, *-selector above makes sure this is inherited by all elements */
+  /* border-box causes padding and border to be included in in total width/height of element for more inutuitive experience */
+  box-sizing: border-box;
+  background-color: $color-black;
+}
+
+button {
+  font-size: 100%;
+  font-family: inherit;
+  border: 0;
+  padding: 0;
+  background: inherit;
+
+  &:focus {
+    outline: 0;
+  }
+}
