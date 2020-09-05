@@ -1,4 +1,3 @@
-
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -23,7 +22,7 @@ body {
     font-size: 6rem;
     font-weight: 700;
     letter-spacing: 1rem;
-  
+
     /*Calls the custom animation we made below @keyframes*/
     animation-name: moveInLeft;
     animation-duration: 1s;
@@ -32,8 +31,6 @@ body {
     animation-iteration-count: 3; number of times animiation is run
     animation-delay: 3s; delays start time of animation
     */
-  
-  
   }
 
   &--sub {
@@ -46,20 +43,39 @@ body {
   }
 }
 
-.timeline{
-  &__bullet--heading {
-    color: $color-white;
-    text-transform: uppercase;
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: 0.5rem;
+// .timeline__date--main {
+//   color: $color-white;
+//   text-transform: uppercase;
+//   font-size: 3.5rem;
+//   font-weight: 700;
+//   letter-spacing: 0.5rem;
+// }
+
+.timeline {
+
+  &__bullet {
+    &--date {
+      color: $color-white;
+      text-transform: uppercase;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+    }
+
+    &--heading {
+      color: $color-white;
+      text-transform: uppercase;
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5rem;
+    }
   }
 
   &__paragraph {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.1rem
+    letter-spacing: 0.1rem;
   }
 
   &__list {
@@ -67,22 +83,21 @@ body {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 0.1rem
+    letter-spacing: 0.1rem;
   }
 }
 
 .footer {
-
   &__heading {
-    color: $color-white; 
+    color: $color-white;
     text-align: center;
-  
+
     &--main {
       font-size: 3.5rem;
       font-weight: 700;
       letter-spacing: 0.5rem;
     }
-  
+
     &--sub {
       font-size: 2rem;
       font-weight: 700;
@@ -93,7 +108,6 @@ body {
   &__links {
     text-align: center;
   }
-
 }
 
 ion-icon {
