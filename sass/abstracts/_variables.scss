@@ -1,3 +1,5 @@
+////////////////COLORS//////////////////////
+
 $color-primary: #8d35ff;
 // $color-primary-dark-1: #4d4258;
 // $color-primary-dark: #3c3552;
@@ -14,7 +16,20 @@ $color-grey-light: #C6CBC9;
 $color-white: #fff;
 $color-black: #000;
 
+
+///////////////LAYOUT//////////////////////
 $margin-timeline: 25%;
+
+$bullet-point-size--main: 3rem;
+$bullet-point-margin--main: 1rem;
+$bullet-date-width--main: 22rem;
+$bullet-transform--main: $bullet-date-width--main + ($bullet-point-size--main + 2*$bullet-point-margin--main)/2;
+
+
+$bullet-point-size--sub: 1rem;
+$bullet-point-margin--sub: 1rem;
+$bullet-date-width--sub: 7rem;
+$bullet-transform--sub: $bullet-date-width--sub + ($bullet-point-size--sub + 2*$bullet-point-margin--sub)/2;
 
 
 // #90A2BD
