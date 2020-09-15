@@ -161,6 +161,9 @@ body {
     .timeline__bullet--heading {
       letter-spacing: 0.25rem;
       font-size: 3.25rem; } }
+  @media (max-width: 37.5em) {
+    .timeline__bullet--heading {
+      background-color: orangered; } }
 
 .timeline__paragraph {
   display: block;
