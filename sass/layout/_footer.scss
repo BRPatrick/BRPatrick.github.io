@@ -10,45 +10,17 @@
 background-color: $color-primary-dark-2;
 
 
-//   background: linear-gradient(
-//     0deg,
-//     $color-black 0%,
-//     $color-primary-dark-1 10%,
-//     $color-primary-dark-1 90%,
-//     $color-black 100%
-//   );
-
-
-
-  &__heading {
-    // display: flex;
-    // flex-wrap: wrap;
-
-    &--main {
+    &__subheading {
       margin: auto;
-    }
-
-    &--line {
-        margin: auto;
-
-       background-color: $color-primary-light;
-        border: none;
-        height: 2px;
-        width: 20vw;
-    }
-
-    &--sub {
-      margin: 1rem auto;
       width: 30vw;
     }
-  }
 
   &__links {
     margin: 2rem auto;
 
     &--contact {
       margin: 1rem;
-      padding: 2px;
+      padding: .2rem;
 
       &:hover {
         border-bottom: 4px solid $color-primary-light;

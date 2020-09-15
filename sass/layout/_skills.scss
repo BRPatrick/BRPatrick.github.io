@@ -1,0 +1,38 @@
+.skills {
+  margin: 5rem auto;
+  max-width: 90rem;
+
+  &__subheading {
+    margin: auto;
+    width: 70rem;
+  }
+
+  &__list-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    list-style-type: none;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+    &--item {
+      & + &:before {
+        content: " ∙";
+        margin: 0 .5rem;
+      }
+    }
+  }
+}
+
+.skills__section-container {
+  background-color: $color-primary-dark-2;
+  padding: 1rem;
+  margin: auto;
+  border: 0.5rem double $color-primary-light;
+  border-radius: 25px;
+}

@@ -5,6 +5,15 @@
     background-image: linear-gradient($color-black, $color-primary);
     margin-left: $margin-timeline;
     transform: translate(-50%);
+    box-shadow: 0 0 2em .025em $color-primary;
+
+    @include respond(tab-land) {
+      margin-left: $margin-timeline-tab-land;
+    }
+
+    @include respond(tab-port) {
+      margin-left: $margin-timeline-tab-port;
+    }
   }
 
   &--main {
@@ -16,6 +25,15 @@
     position: absolute;
     margin-left: $margin-timeline;
     transform: translate(-50%);
+    box-shadow: $timeline-box-shadow;
+
+    @include respond(tab-land) {
+      margin-left: $margin-timeline-tab-land;
+    }
+
+    @include respond(tab-port) {
+      margin-left: $margin-timeline-tab-port;
+    }
   }
 
   &--tail {
@@ -25,7 +43,21 @@
     margin-left: $margin-timeline;
     transform: translate(-50%);
     margin-bottom: 3rem;
+    box-shadow: 0 0 2em .05em $color-primary;
+
+    @include respond(tab-land) {
+      margin-left: $margin-timeline-tab-land;
+    }
+
+    @include respond(tab-port) {
+      margin-left: $margin-timeline-tab-port;
+    }
   }
+}
+
+.timeline__subheading {
+  margin: auto;
+  width: 75vw;
 }
 
 .timeline {
@@ -34,6 +66,7 @@
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
+
 
   &__bullet {
     display: flex;
@@ -47,8 +80,8 @@
       background: linear-gradient(
         90deg,
         $color-black 0%,
-        $color-primary-dark-3 20%,
         $color-primary-dark-3 50%,
+        $color-primary-dark-3 80%,
         $color-black 100%
       );
       outline: 0;
@@ -59,6 +92,14 @@
       width: $bullet-date-width--main;
       margin-left: $margin-timeline;
       flex-shrink: 0;
+
+      @include respond(tab-land) {
+        margin-left: $margin-timeline-tab-land;
+      }
+
+      @include respond(tab-port) {
+        margin-left: $margin-timeline-tab-port;
+      }
     }
 
     &--point {
@@ -67,6 +108,7 @@
       border: 0.2rem solid $color-primary;
       border-radius: 50%;
       background-color: $color-black;
+      box-shadow: $timeline-box-shadow;
       margin: 0 $bullet-point-margin--main;
       position: relative;
       flex-shrink: 0;
@@ -110,7 +152,7 @@
     }
 
     &--heading {
-      
+      flex-shrink: 0;
     }
   }
 
@@ -125,6 +167,15 @@
     margin-left: $margin-timeline;
     padding-top: 1rem;
     padding-left: 3rem;
+    max-width: 130rem;
+
+    @include respond(tab-land) {
+      margin-left: $margin-timeline-tab-land;
+    }
+
+    @include respond(tab-port) {
+      margin-left: $margin-timeline-tab-port;
+    }
   }
 
   &__list {
@@ -138,6 +189,14 @@
       width: $bullet-date-width--sub;
       margin-left: $margin-timeline;
       flex-shrink: 0;
+
+      @include respond(tab-land) {
+        margin-left: $margin-timeline-tab-land;
+      }
+
+      @include respond(tab-port) {
+        margin-left: $margin-timeline-tab-port;
+      }
     }
 
     &--point {
@@ -163,19 +222,12 @@
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   margin: 1rem 0;
-  //   background: linear-gradient(
-  //     90deg,
-  //     $color-black 10%,
-  //     $color-primary-dark-2 20%,
-  //     $color-primary-dark-2 50%,
-  //     $color-black 70%
-  //   );
   &__inner {
     margin: 1rem 0;
   }
 }
 
-////This will be for mobile users ONLY////@at-root
+
 .collapsible:after {
   font-family: FontAwesome;
   content: "\f078";

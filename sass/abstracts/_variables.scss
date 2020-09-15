@@ -5,6 +5,7 @@ $color-primary: #8d35ff;
 // $color-primary-dark: #3c3552;
 
 $color-primary-light: #8f78fd;
+$color-primary-light-2: #aa99ff;
 // $color-primary-dark: #6B4E90;
 
 $color-primary-dark-1: #564d70;
@@ -14,11 +15,14 @@ $color-primary-dark-3: #1b1335;
 $color-grey-dark: #777;
 $color-grey-light: #C6CBC9;
 $color-white: #fff;
-$color-black: #000;
+$color-black: rgb(10, 10, 10);
 
+///////////////LAYOUT//////$margin-timeline-tab-land: 24.5%;////////////////
+$margin-timeline: 19.5%;
+$margin-timeline-tab-land: 24.5%;
+$margin-timeline-tab-port: 25.5%;
 
-///////////////LAYOUT//////////////////////
-$margin-timeline: 25%;
+$timeline-box-shadow: 0 0 .75em .05em $color-primary;
 
 $bullet-point-size--main: 3rem;
 $bullet-point-margin--main: 1rem;
