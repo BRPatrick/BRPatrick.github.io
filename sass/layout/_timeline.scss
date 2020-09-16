@@ -74,10 +74,10 @@
     transition: all 0.5s;
     transform: translateX(-$bullet-transform--main);
     height: $bullet-point-size--main;
-    background-color: palegreen;
+
 
     @include respond(phone) {
-      // transform: translateX(-$bullet-transform--main-phone);
+      transform: translateX(0);
       height: $bullet-point-size--main-phone;
     }
 
@@ -108,7 +108,7 @@
       }
 
       @include respond(phone) {
-        margin-left: auto;
+        margin-left: 0;
       }
     }
 
@@ -130,7 +130,7 @@
       @include respond(phone) {
         height: $bullet-point-size--main-phone;
         width: $bullet-point-size--main-phone;
-        margin: 0 $bullet-point-margin--main-phone;
+        // margin: 0 $bullet-point-margin--main-phone;
       }
 
 
@@ -172,7 +172,7 @@
 
       
     @include respond(phone) {
-      flex-shrink: 1;
+      // flex-shrink: 1;
     }
 
     }
@@ -258,12 +258,10 @@
   font-size: 2rem;
   //   float: right;
   margin-left: 5px;
-  background-color: orangered;
 }
 
 .active:after {
   font-family: FontAwesome;
   content: "\f077";
   color: $color-primary;
-  background-color: orangered;
 }
