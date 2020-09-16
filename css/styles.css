@@ -344,10 +344,10 @@ ion-icon {
     align-items: center;
     transition: all 0.5s;
     transform: translateX(-24.5rem);
-    height: 3rem; }
+    height: 3rem;
+    background-color: palegreen; }
     @media (max-width: 37.5em) {
       .timeline__bullet {
-        transform: translateX(-24rem);
         height: 2rem; } }
     .timeline__bullet:focus, .timeline__bullet:hover {
       background: linear-gradient(90deg, #0a0a0a 0%, #1b1335 50%, #1b1335 80%, #0a0a0a 100%);
@@ -363,6 +363,9 @@ ion-icon {
       @media (max-width: 56.25em) {
         .timeline__bullet--date {
           margin-left: 25.5%; } }
+      @media (max-width: 37.5em) {
+        .timeline__bullet--date {
+          margin-left: auto; } }
     .timeline__bullet--point {
       height: 3rem;
       width: 3rem;
@@ -405,6 +408,9 @@ ion-icon {
         transition: all 0.4s; }
     .timeline__bullet--heading {
       flex-shrink: 0; }
+      @media (max-width: 37.5em) {
+        .timeline__bullet--heading {
+          flex-shrink: 1; } }
   .timeline__item {
     display: flex;
     flex-direction: row;
@@ -460,12 +466,14 @@ ion-icon {
   color: #8d35ff;
   font-weight: bold;
   font-size: 2rem;
-  margin-left: 5px; }
+  margin-left: 5px;
+  background-color: orangered; }
 
 .active:after {
   font-family: FontAwesome;
   content: "\f077";
-  color: #8d35ff; }
+  color: #8d35ff;
+  background-color: orangered; }
 
 .skills {
   margin: 5rem auto;
