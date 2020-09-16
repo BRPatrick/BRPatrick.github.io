@@ -75,6 +75,11 @@
     transform: translateX(-$bullet-transform--main);
     height: $bullet-point-size--main;
 
+    @include respond(phone) {
+      transform: translateX(-$bullet-transform--main-phone);
+      height: $bullet-point-size--main-phone;
+    }
+
     &:focus,
     &:hover {
       background: linear-gradient(
@@ -116,6 +121,12 @@
       transform-style: preserve-3d;
       transition: all 0.2s;
       z-index: 1;
+
+      @include respond(phone) {
+        height: $bullet-point-size--main-phone;
+        width: $bullet-point-size--main-phone;
+        margin: 0 $bullet-point-margin--main-phone;
+      }
 
 
       &:hover {

@@ -150,6 +150,11 @@ body {
     .timeline__bullet--date {
       letter-spacing: 0.25rem;
       font-size: 3.25rem; } }
+  @media (max-width: 37.5em) {
+    .timeline__bullet--date {
+      background-color: orangered;
+      letter-spacing: 0;
+      font-size: 2.5rem; } }
 
 .timeline__bullet--heading {
   color: #fff;
@@ -163,7 +168,9 @@ body {
       font-size: 3.25rem; } }
   @media (max-width: 37.5em) {
     .timeline__bullet--heading {
-      background-color: orangered; } }
+      background-color: orangered;
+      letter-spacing: 0;
+      font-size: 2.5rem; } }
 
 .timeline__paragraph {
   display: block;
@@ -338,6 +345,10 @@ ion-icon {
     transition: all 0.5s;
     transform: translateX(-24.5rem);
     height: 3rem; }
+    @media (max-width: 37.5em) {
+      .timeline__bullet {
+        transform: translateX(-24rem);
+        height: 2rem; } }
     .timeline__bullet:focus, .timeline__bullet:hover {
       background: linear-gradient(90deg, #0a0a0a 0%, #1b1335 50%, #1b1335 80%, #0a0a0a 100%);
       outline: 0; }
@@ -365,6 +376,11 @@ ion-icon {
       transform-style: preserve-3d;
       transition: all 0.2s;
       z-index: 1; }
+      @media (max-width: 37.5em) {
+        .timeline__bullet--point {
+          height: 2rem;
+          width: 2rem;
+          margin: 0 1rem; } }
       .timeline__bullet--point:hover {
         margin-right: 1rem;
         /*After pseudo element -only- when we have the hoverstate */ }

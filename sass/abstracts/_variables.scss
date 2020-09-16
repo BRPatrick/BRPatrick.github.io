@@ -29,6 +29,11 @@ $bullet-point-margin--main: 1rem;
 $bullet-date-width--main: 22rem;
 $bullet-transform--main: $bullet-date-width--main + ($bullet-point-size--main + 2*$bullet-point-margin--main)/2;
 
+$bullet-point-size--main-phone: 2rem;
+$bullet-point-margin--main-phone: 1rem;
+$bullet-date-width--main-phone: 22rem;
+$bullet-transform--main-phone: $bullet-date-width--main-phone + ($bullet-point-size--main-phone + 2*$bullet-point-margin--main-phone)/2;
+
 
 $bullet-point-size--sub: 1rem;
 $bullet-point-margin--sub: 1rem;
