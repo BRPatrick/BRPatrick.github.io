@@ -99,7 +99,8 @@ body {
   text-transform: uppercase;
   /* Removes shakiness from animation */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+  width: 30rem; }
   .header__heading-primary--main {
     /* Changes span from in-line element, to block */
     display: block;
@@ -137,6 +138,9 @@ body {
   font-weight: 700;
   letter-spacing: 0.1rem; }
 
+.emdash {
+  color: #aa99ff; }
+
 .timeline__bullet--date {
   color: #fff;
   text-transform: uppercase;
@@ -160,8 +164,8 @@ body {
       font-size: 3.25rem; } }
   @media (max-width: 37.5em) {
     .timeline__bullet--heading {
-      letter-spacing: 0.5;
-      font-size: 3.5rem; } }
+      letter-spacing: 0.25rem;
+      font-size: 3rem; } }
 
 .timeline__paragraph {
   display: block;
@@ -189,6 +193,9 @@ body {
 ion-icon {
   color: #fff;
   font-size: 40px; }
+  @media (max-width: 37.5em) {
+    ion-icon {
+      font-size: 32px; } }
 
 .btn {
   /*Pseudo states to style button/link properties */ }
@@ -348,10 +355,13 @@ ion-icon {
     @media (max-width: 37.5em) {
       .timeline__bullet {
         transform: translateX(0);
-        height: 2rem; } }
+        height: auto; } }
     .timeline__bullet:focus, .timeline__bullet:hover {
       background: linear-gradient(90deg, #0a0a0a 0%, #1b1335 50%, #1b1335 80%, #0a0a0a 100%);
       outline: 0; }
+      @media (max-width: 37.5em) {
+        .timeline__bullet:focus, .timeline__bullet:hover {
+          background: linear-gradient(90deg, #1b1335 0%, #1b1335 80%, #0a0a0a 100%); } }
     .timeline__bullet--date {
       text-align: right;
       width: 22rem;
@@ -448,10 +458,10 @@ ion-icon {
         .timeline__list--date {
           order: 2;
           margin-left: 0;
-          margin-right: 2rem; }
+          margin-right: 1rem; }
           .timeline__list--date:after {
             content: "∙";
-            margin-left: 1rem;
+            margin-left: .5rem;
             color: #aa99ff; } }
     .timeline__list--point {
       flex-shrink: 0;
@@ -464,11 +474,11 @@ ion-icon {
       @media (max-width: 37.5em) {
         .timeline__list--point {
           order: 1;
-          margin: 0 1.5rem; } }
+          margin-left: 1.5rem; } }
     .timeline__list--text {
       display: block;
       border-bottom: 1px solid #aa99ff;
-      margin-bottom: 4px; }
+      margin-bottom: .4rem; }
       @media (max-width: 37.5em) {
         .timeline__list--text {
           order: 3; } }

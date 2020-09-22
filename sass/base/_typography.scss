@@ -7,6 +7,8 @@ body {
 
 }
 
+
+
 .header {
   &__heading-primary {
     color: $color-white;
@@ -16,6 +18,8 @@ body {
     backface-visibility: hidden;
 
     margin-bottom: 6rem;
+
+    width: 30rem;
 
     &--main {
       /* Changes span from in-line element, to block */
@@ -62,6 +66,9 @@ body {
   letter-spacing: 0.1rem;
 }
 
+.emdash {
+  color: $color-primary-light-2;
+}
 
 .timeline {
   &__bullet {
@@ -93,8 +100,8 @@ body {
       }
 
       @include respond(phone) {
-        letter-spacing: 0.5;
-        font-size: 3.5rem;
+        letter-spacing: 0.25rem;
+        font-size: 3rem;
       }
     }
   }
@@ -137,4 +144,8 @@ body {
 ion-icon {
   color: $color-white;
   font-size: 40px;
+
+  @include respond(phone) {
+    font-size: 32px;
+  }
 }
