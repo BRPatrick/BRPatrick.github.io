@@ -100,7 +100,7 @@ body {
   /* Removes shakiness from animation */
   backface-visibility: hidden;
   margin-bottom: 6rem;
-  width: 30rem; }
+  min-width: 30rem; }
   .header__heading-primary--main {
     /* Changes span from in-line element, to block */
     display: block;
@@ -173,7 +173,7 @@ body {
 
 .timeline__paragraph {
   display: block;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 0.1rem; }
 
@@ -183,6 +183,9 @@ body {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: 0.1rem; }
+  @media (max-width: 37.5em) {
+    .timeline__list {
+      font-size: 1.8rem; } }
 
 .skills__list {
   color: #fff;
@@ -259,16 +262,19 @@ ion-icon {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.5)), url(../img/Aca2.jpg);
+  background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.25)), url(../img/Acatenango-large.jpg);
   /*Background fills the page */
   background-size: cover;
-  /*When re-sizing image, trims from bottom */
+  /*When re-sizing image, trims from this direction */
   background-position: top;
   /* Parent element to "logo-box/logo" classes, relative creates reference/origin for positioning */
   position: relative;
   /*Trims/shapes/crops image: Use "Clippy" tool to play with this feature*/
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   margin-bottom: 3rem; }
+  @media (max-width: 75em) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.25)), url(../img/Acatenango-small.jpg); } }
   .header__logo-box {
     position: fixed;
     top: 4rem;
@@ -464,7 +470,7 @@ ion-icon {
           margin-left: 0;
           margin-right: 1rem; }
           .timeline__list--date:after {
-            content: "∙";
+            content: "<";
             margin-left: .5rem;
             color: #aa99ff; } }
     .timeline__list--point {
@@ -482,7 +488,8 @@ ion-icon {
     .timeline__list--text {
       display: block;
       border-bottom: 1px solid #aa99ff;
-      margin-bottom: .4rem; }
+      margin-bottom: .4rem;
+      margin-right: 1rem; }
       @media (max-width: 37.5em) {
         .timeline__list--text {
           order: 3; } }

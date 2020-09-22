@@ -19,7 +19,7 @@ body {
 
     margin-bottom: 6rem;
 
-    width: 30rem;
+    min-width: 30rem;
 
     &--main {
       /* Changes span from in-line element, to block */
@@ -113,7 +113,7 @@ body {
 
   &__paragraph {
     display: block;
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
   }
@@ -124,6 +124,10 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
+
+    @include respond(phone) {
+      font-size: 1.8rem;
+    }
   }
 }
 

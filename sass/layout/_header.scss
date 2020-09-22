@@ -5,14 +5,26 @@
       /* Gradient image at .8 opacity on top of background image */ to right
         bottom,
       rgba($color-primary-dark-1, 0.5),
-      rgba($color-primary-dark-2, 0.5)
+      rgba($color-primary-dark-2, 0.25)
     ),
-    url(../img/Aca2.jpg);
+    url(../img/Acatenango-large.jpg);
+
+    @include respond(tab-land) {
+      background-image: linear-gradient(
+        /* Gradient image at .8 opacity on top of background image */ to right
+          bottom,
+        rgba($color-primary-dark-1, 0.5),
+        rgba($color-primary-dark-2, 0.25)
+      ),
+      url(../img/Acatenango-small.jpg);
+    }
+
+    // background-image: url(../img/Acatenango3.jpg);
 
   /*Background fills the page */
   background-size: cover;
 
-  /*When re-sizing image, trims from bottom */
+  /*When re-sizing image, trims from this direction */
   background-position: top;
 
   /* Parent element to "logo-box/logo" classes, relative creates reference/origin for positioning */
