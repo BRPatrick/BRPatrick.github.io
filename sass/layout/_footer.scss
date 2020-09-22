@@ -8,11 +8,17 @@
   linear-gradient(45deg, $color-primary-dark-1 25%, transparent 25%);
 // background-size: 100px 100px;
 background-color: $color-primary-dark-2;
-
+    &__mainheading {
+      margin-top: 6rem;
+    }
 
     &__subheading {
       margin: auto;
       width: 30vw;
+
+      @include respond(phone) {
+        width: 60vw;
+      }
     }
 
   &__links {

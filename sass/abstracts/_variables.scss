@@ -21,7 +21,7 @@ $color-black: rgb(10, 10, 10);
 $margin-timeline: 19.5%;
 $margin-timeline-tab-land: 24.5%;
 $margin-timeline-tab-port: 25.5%;
-$margin-timeline-phone: 2rem;
+$margin-timeline-phone: 1.1rem;
 
 $timeline-box-shadow: 0 0 .75em .05em $color-primary;
 
@@ -31,10 +31,8 @@ $bullet-point-margin--main: 1rem;
 $bullet-date-width--main: 22rem;
 $bullet-transform--main: $bullet-date-width--main + ($bullet-point-size--main + 2*$bullet-point-margin--main)/2;
 
-$bullet-point-size--main-phone: 2rem;
-$bullet-point-margin--main-phone: 1rem;
-$bullet-date-width--main-phone: 0;
-$bullet-transform--main-phone: $bullet-date-width--main-phone + ($bullet-point-size--main-phone + 2*$bullet-point-margin--main-phone)/2;
+$bullet-point-size--main-phone: 1.5rem;
+$bullet-point-margin--main-phone: .35rem;
 
 /////SUB HEADING BULLET//////
 $bullet-point-size--sub: 1rem;

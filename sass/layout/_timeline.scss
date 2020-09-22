@@ -96,19 +96,20 @@
     &:hover {
       background: linear-gradient(
         90deg,
-        $color-black 0%,
+        rgba(0,0,0,0) 0%,
         $color-primary-dark-3 50%,
         $color-primary-dark-3 80%,
-        $color-black 100%
+        rgba(0,0,0,0) 100%
       );
       outline: 0;
 
       @include respond(phone) {
         background: linear-gradient(
           90deg,
-          $color-primary-dark-3 0%,
+          rgba(0,0,0,0) 0%,
+          $color-primary-dark-3 20%,
           $color-primary-dark-3 80%,
-          $color-black 100%
+          rgba(0,0,0,0) 100%
         );
       }
     }
@@ -150,7 +151,8 @@
       @include respond(phone) {
         height: $bullet-point-size--main-phone;
         width: $bullet-point-size--main-phone;
-        margin: 0 $bullet-point-margin--main-phone;
+        margin: 0 .5rem 0 $bullet-point-margin--main-phone;
+        
       }
 
 
@@ -273,7 +275,7 @@
 
       @include respond(phone) {
         order: 1;
-        margin-left: 1.5rem;
+        margin-left: .6rem;
        }
     }
 
