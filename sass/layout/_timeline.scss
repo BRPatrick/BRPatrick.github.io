@@ -14,6 +14,10 @@
     @include respond(tab-port) {
       margin-left: $margin-timeline-tab-port;
     }
+
+    @include respond(phone) {
+      margin-left: $margin-timeline-phone;
+    }
   }
 
   &--main {
@@ -34,6 +38,10 @@
     @include respond(tab-port) {
       margin-left: $margin-timeline-tab-port;
     }
+
+    @include respond(phone) {
+      margin-left: $margin-timeline-phone;
+    }
   }
 
   &--tail {
@@ -51,6 +59,10 @@
 
     @include respond(tab-port) {
       margin-left: $margin-timeline-tab-port;
+    }
+
+    @include respond(phone) {
+      margin-left: $margin-timeline-phone;
     }
   }
 }
@@ -108,7 +120,7 @@
       }
 
       @include respond(phone) {
-        margin-left: 0;
+        display: none;
       }
     }
 
@@ -130,7 +142,7 @@
       @include respond(phone) {
         height: $bullet-point-size--main-phone;
         width: $bullet-point-size--main-phone;
-        // margin: 0 $bullet-point-margin--main-phone;
+        margin: 0 $bullet-point-margin--main-phone;
       }
 
 
@@ -198,6 +210,11 @@
     @include respond(tab-port) {
       margin-left: $margin-timeline-tab-port;
     }
+
+    @include respond(phone) {
+      margin-left: $margin-timeline-phone;
+    }
+    
   }
 
   &__list {
@@ -205,6 +222,9 @@
     align-items: center;
     transform: translateX(-$bullet-transform--sub);
 
+    @include respond(phone) {
+      transform: translateX(0);
+     }
 
     &--date {
       text-align: right;
@@ -219,6 +239,19 @@
       @include respond(tab-port) {
         margin-left: $margin-timeline-tab-port;
       }
+
+      @include respond(phone) {
+       order: 2;
+       margin-left: 0;
+       margin-right: 2rem;
+
+       &:after {
+         content: "∙";
+         margin-left: 1rem;
+         color: $color-primary-light-2;
+       }
+      }
+
     }
 
     &--point {
@@ -229,10 +262,22 @@
       border-radius: 50%;
       position: relative;
       margin: 0 $bullet-point-margin--sub;
+
+      @include respond(phone) {
+        order: 1;
+        margin: 0 1.5rem;
+       }
     }
 
     &--text {
       display: block;
+
+      border-bottom: 1px solid $color-primary-light-2;
+      margin-bottom: 4px;
+
+      @include respond(phone) {
+        order: 3;
+       }
     }
   }
 }

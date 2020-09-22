@@ -67,9 +67,6 @@ html {
   @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media (max-width: 37.5em) {
-    html {
-      font-size: 30%; } }
 
 body {
   /*A good practice to put in body, making it easier to use plug-ins, *-selector above makes sure this is inherited by all elements */
@@ -150,11 +147,6 @@ body {
     .timeline__bullet--date {
       letter-spacing: 0.25rem;
       font-size: 3.25rem; } }
-  @media (max-width: 37.5em) {
-    .timeline__bullet--date {
-      background-color: orangered;
-      letter-spacing: 0;
-      font-size: 2.5rem; } }
 
 .timeline__bullet--heading {
   color: #fff;
@@ -168,9 +160,8 @@ body {
       font-size: 3.25rem; } }
   @media (max-width: 37.5em) {
     .timeline__bullet--heading {
-      background-color: orangered;
-      letter-spacing: 0;
-      font-size: 2.5rem; } }
+      letter-spacing: 0.5;
+      font-size: 3.5rem; } }
 
 .timeline__paragraph {
   display: block;
@@ -298,6 +289,9 @@ ion-icon {
   @media (max-width: 56.25em) {
     .timeline__line--tip {
       margin-left: 25.5%; } }
+  @media (max-width: 37.5em) {
+    .timeline__line--tip {
+      margin-left: 2rem; } }
 
 .timeline__line--main {
   width: 0.2rem;
@@ -313,6 +307,9 @@ ion-icon {
   @media (max-width: 56.25em) {
     .timeline__line--main {
       margin-left: 25.5%; } }
+  @media (max-width: 37.5em) {
+    .timeline__line--main {
+      margin-left: 2rem; } }
 
 .timeline__line--tail {
   width: 0.2rem;
@@ -328,6 +325,9 @@ ion-icon {
   @media (max-width: 56.25em) {
     .timeline__line--tail {
       margin-left: 25.5%; } }
+  @media (max-width: 37.5em) {
+    .timeline__line--tail {
+      margin-left: 2rem; } }
 
 .timeline__subheading {
   margin: auto;
@@ -365,7 +365,7 @@ ion-icon {
           margin-left: 25.5%; } }
       @media (max-width: 37.5em) {
         .timeline__bullet--date {
-          margin-left: 0; } }
+          display: none; } }
     .timeline__bullet--point {
       height: 3rem;
       width: 3rem;
@@ -382,7 +382,8 @@ ion-icon {
       @media (max-width: 37.5em) {
         .timeline__bullet--point {
           height: 2rem;
-          width: 2rem; } }
+          width: 2rem;
+          margin: 0 1rem; } }
       .timeline__bullet--point:hover {
         margin-right: 1rem;
         /*After pseudo element -only- when we have the hoverstate */ }
@@ -422,10 +423,16 @@ ion-icon {
     @media (max-width: 56.25em) {
       .timeline__paragraph {
         margin-left: 25.5%; } }
+    @media (max-width: 37.5em) {
+      .timeline__paragraph {
+        margin-left: 2rem; } }
   .timeline__list {
     display: flex;
     align-items: center;
     transform: translateX(-8.5rem); }
+    @media (max-width: 37.5em) {
+      .timeline__list {
+        transform: translateX(0); } }
     .timeline__list--date {
       text-align: right;
       width: 7rem;
@@ -437,6 +444,15 @@ ion-icon {
       @media (max-width: 56.25em) {
         .timeline__list--date {
           margin-left: 25.5%; } }
+      @media (max-width: 37.5em) {
+        .timeline__list--date {
+          order: 2;
+          margin-left: 0;
+          margin-right: 2rem; }
+          .timeline__list--date:after {
+            content: "∙";
+            margin-left: 1rem;
+            color: #aa99ff; } }
     .timeline__list--point {
       flex-shrink: 0;
       height: 1rem;
@@ -445,8 +461,17 @@ ion-icon {
       border-radius: 50%;
       position: relative;
       margin: 0 1rem; }
+      @media (max-width: 37.5em) {
+        .timeline__list--point {
+          order: 1;
+          margin: 0 1.5rem; } }
     .timeline__list--text {
-      display: block; }
+      display: block;
+      border-bottom: 1px solid #aa99ff;
+      margin-bottom: 4px; }
+      @media (max-width: 37.5em) {
+        .timeline__list--text {
+          order: 3; } }
 
 .container {
   max-height: 0;
