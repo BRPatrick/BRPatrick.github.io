@@ -11,9 +11,10 @@ $color-primary-light-2: #aa99ff;
 $color-primary-dark-1: #564d70;
 $color-primary-dark-2: #4d4258;
 $color-primary-dark-3: #1b1335;
+$color-primary-dark-3-50: #1b13357f;
 
 $color-grey-dark: #777;
-$color-grey-light: #C6CBC9;
+$color-grey-light: #c6cbc9;
 $color-white: #fff;
 $color-black: rgb(10, 10, 10);
 
@@ -23,23 +24,24 @@ $margin-timeline-tab-land: 24.5%;
 $margin-timeline-tab-port: 25.5%;
 $margin-timeline-phone: 1.1rem;
 
-$timeline-box-shadow: 0 0 .75em .05em $color-primary;
+$timeline-box-shadow: 0 0 0.75em 0.05em $color-primary;
 
 //////PRIMARY BULLET///////////
 $bullet-point-size--main: 3rem;
 $bullet-point-margin--main: 1rem;
 $bullet-date-width--main: 22rem;
-$bullet-transform--main: $bullet-date-width--main + ($bullet-point-size--main + 2*$bullet-point-margin--main)/2;
+$bullet-transform--main: $bullet-date-width--main +
+  ($bullet-point-size--main + 2 * $bullet-point-margin--main)/2;
 
 $bullet-point-size--main-phone: 1.5rem;
-$bullet-point-margin--main-phone: .35rem;
+$bullet-point-margin--main-phone: 0.35rem;
 
 /////SUB HEADING BULLET//////
 $bullet-point-size--sub: 1rem;
 $bullet-point-margin--sub: 1rem;
 $bullet-date-width--sub: 7rem;
-$bullet-transform--sub: $bullet-date-width--sub + ($bullet-point-size--sub + 2*$bullet-point-margin--sub)/2;
-
+$bullet-transform--sub: $bullet-date-width--sub +
+  ($bullet-point-size--sub + 2 * $bullet-point-margin--sub)/2;
 
 // #90A2BD
 // #101012

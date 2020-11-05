@@ -92,7 +92,7 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: #C6CBC9; }
+  color: #c6cbc9; }
 
 .header__heading-primary {
   color: #fff;
@@ -209,7 +209,7 @@ ion-icon {
   .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
+    padding: 1rem 3.5rem;
     /*Always use when giving padding/height to elements so will not overlap other elements */
     display: inline-block;
     border-radius: 10rem;
@@ -295,19 +295,25 @@ ion-icon {
 
 .flip-card__heading--main {
   color: #fff;
-  font-size: 2.5rem;
+  font-size: 3rem;
   position: relative;
-  top: 65%;
-  background: #1b1335;
-  background: linear-gradient(90deg, rgba(27, 19, 53, 0.5) 10%, rgba(27, 19, 53, 0.75) 25%, rgba(27, 19, 53, 0.75) 75%, rgba(27, 19, 53, 0.5) 90%); }
+  border-top: 1px solid #8f78fd;
+  border-bottom: 1px solid #8f78fd;
+  top: 60%;
+  background: rgba(27, 19, 53, 0.5);
+  letter-spacing: 0.1rem; }
 
 .flip-card__heading--sub {
   color: #fff;
   font-size: 2rem;
   position: relative;
-  top: 75%;
-  background: #1b1335;
-  background: linear-gradient(90deg, rgba(27, 19, 53, 0.5) 10%, rgba(27, 19, 53, 0.75) 25%, rgba(27, 19, 53, 0.75) 75%, rgba(27, 19, 53, 0.5) 90%); }
+  top: 65%;
+  border-top: 1px solid #8f78fd;
+  border-bottom: 1px solid #8f78fd;
+  background: rgba(27, 19, 53, 0.5); }
+
+.card-button {
+  top: 65%; }
 
 .flip-card-front--portfolio {
   background-image: url(../img/portfolio-card.png);
