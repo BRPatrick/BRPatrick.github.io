@@ -260,6 +260,68 @@ ion-icon {
   height: 2px;
   width: 20vw; }
 
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+  margin: 2rem; }
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d; }
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg); }
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  /* Safari */
+  backface-visibility: hidden;
+  border-radius: 25px;
+  box-shadow: 0px 0px 20px 0px #8f78fd; }
+
+.flip-card__heading--main {
+  color: #fff;
+  font-size: 2.5rem;
+  position: relative;
+  top: 65%;
+  background: #1b1335;
+  background: linear-gradient(90deg, rgba(27, 19, 53, 0.5) 10%, rgba(27, 19, 53, 0.75) 25%, rgba(27, 19, 53, 0.75) 75%, rgba(27, 19, 53, 0.5) 90%); }
+
+.flip-card__heading--sub {
+  color: #fff;
+  font-size: 2rem;
+  position: relative;
+  top: 75%;
+  background: #1b1335;
+  background: linear-gradient(90deg, rgba(27, 19, 53, 0.5) 10%, rgba(27, 19, 53, 0.75) 25%, rgba(27, 19, 53, 0.75) 75%, rgba(27, 19, 53, 0.5) 90%); }
+
+.flip-card-front--portfolio {
+  background-image: url(../img/portfolio-card.png);
+  background-color: honeydew; }
+
+.flip-card-front--mane-quiz {
+  background-image: url(../img/mane-quiz-card.png); }
+
+/* Style the back side */
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.25)), url(../img/Acatenango-large.jpg);
@@ -561,3 +623,8 @@ ion-icon {
       padding: .2rem; }
       .footer__links--contact:hover {
         border-bottom: 4px solid #8f78fd; }
+
+.projects__flip-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; }
