@@ -36,11 +36,11 @@
 .flip-card__heading--main {
   color: $color-white;
   font-size: 3rem;
-  position: relative;
+  position: absolute;
+  width: 100%;
   border-top: 1px solid $color-primary-light;
   border-bottom: 1px solid $color-primary-light;
-  top: 60%;
-  //   background-color: $color-primary-dark-3;
+  top: 65%;
   background: rgba($color-primary-dark-3, 0.5);
   letter-spacing: 0.1rem;
 }
@@ -48,18 +48,17 @@
 .flip-card__heading--sub {
   color: $color-white;
   font-size: 2rem;
-  position: relative;
-  //   border-top: 1px solid $color-primary-light;
-  //   border-bottom: 1px solid $color-primary-light;
-  top: 65%;
-  //   background-color: $color-primary-dark-3;
+  position: absolute;
+  width: 100%;
+  top: 80%;
   border-top: 1px solid $color-primary-light;
   border-bottom: 1px solid $color-primary-light;
   background: rgba($color-primary-dark-3, 0.5);
 }
 
 .card-button {
-  top: 65%;
+  position: absolute;
+  top: 83%;
 }
 
 .flip-card-front--portfolio {
@@ -71,13 +70,35 @@
   background-image: url(../img/mane-quiz-card.png);
 }
 
-.flip-card__img {
-}
-
-/* Style the back side */
 .flip-card-back {
   background-color: #4d4258;
-  background-image: $background-texture-2;
+  background-image: $background-texture-3;
   color: white;
   transform: rotateY(180deg);
+}
+
+.flip-card__details {
+  padding: 1rem;
+  position: absolute;
+  margin-top: 2rem;
+
+  ul {
+    list-style: none;
+    width: 80%;
+    margin: 0 auto;
+    background: rgba($color-primary-dark-3, 0.5);
+    border-radius: 25px;
+    border: 1px solid $color-primary-light;
+
+    li {
+      text-align: center;
+      font-size: 2rem;
+      padding: 1rem;
+      line-height: 1.2;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $color-primary-light;
+      }
+    }
+  }
 }
