@@ -3,11 +3,8 @@ body {
   font-weight: 400;
   /* font-size: 16px; */
   line-height: 1.7;
-  color: $color-grey-light;
-
+  // color: $color-grey-light;
 }
-
-
 
 .header {
   &__heading-primary {
@@ -58,8 +55,8 @@ body {
   letter-spacing: 0.5rem;
 
   @include respond(phone) {
-    letter-spacing: 0.1rem;
-    font-size: 2.75rem;
+    letter-spacing: 0.25rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -71,65 +68,113 @@ body {
   letter-spacing: 0.1rem;
 }
 
-.emdash {
-  color: $color-primary-light-2;
-}
+/////////////////////////////////////////////////////////////////////////////////////@at-root
+/////////////////////////TIMELINE///////////////////////////////////////////////@at-root
+//////////////////////////////////////////////////////////////////////////////////////////
 
 .timeline {
   &__bullet {
-    
     &--date {
       color: $color-white;
       text-transform: uppercase;
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      letter-spacing: 0.5rem;
+      letter-spacing: 0.25rem;
 
       @include respond(tab-port) {
-        letter-spacing: 0.25rem;
-        font-size: 3.25rem;
+        letter-spacing: 0.2rem;
+        font-size: 2.9rem;
       }
-
     }
 
     &--heading {
       color: $color-white;
       text-transform: uppercase;
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 700;
-      letter-spacing: 0.5rem;
+      letter-spacing: 0.25rem;
 
       @include respond(tab-port) {
-        letter-spacing: 0.25rem;
-        font-size: 3.25rem;
+        letter-spacing: 0.2rem;
+        font-size: 2.9rem;
       }
 
       @include respond(phone) {
         letter-spacing: 0.1rem;
-        font-size: 2.75rem;
+        font-size: 2.5rem;
       }
     }
   }
 
   &__paragraph {
+    color: rgb(220, 220, 220);
     display: block;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
+    line-height: 1.5;
   }
 
   &__list {
     color: $color-white;
     display: block;
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
+    line-height: 1.2;
 
     @include respond(phone) {
       font-size: 1.8rem;
+      line-height: 1.2;
     }
   }
 }
+
+.emdash {
+  color: $color-primary-light-2;
+}
+
+/////////////////////////////////////////////////////////////////////////////////////@at-root
+/////////////////////////PROJECTS///////////////////////////////////////////////@at-root
+//////////////////////////////////////////////////////////////////////////////////////////
+.flip-card {
+  &__heading {
+    color: $color-white;
+
+    &--main {
+      font-size: 3rem;
+      letter-spacing: 0.1rem;
+    }
+
+    &--sub {
+      font-size: 2rem;
+    }
+
+    &--mobile {
+      font-size: 1.75rem;
+    }
+  }
+
+  &__back {
+    color: white;
+  }
+
+  &__details {
+    ul {
+      list-style: none;
+
+      li {
+        text-align: center;
+        font-size: 2rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////@at-root
+/////////////////////////SKILLS///////////////////////////////////////////////@at-root
+//////////////////////////////////////////////////////////////////////////////////////////
 
 .skills {
   &__list {
@@ -138,11 +183,14 @@ body {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
-      &--item {
-
-      }
+    &--item {
+    }
   }
 }
+
+/////////////////////////////////////////////////////////////////////////////////////@at-root
+/////////////////////////FOOTER///////////////////////////////////////////////@at-root
+//////////////////////////////////////////////////////////////////////////////////////////
 
 .footer {
   &__links {
@@ -150,6 +198,9 @@ body {
   }
 }
 
+/////////////////////////////////////////////////////////////////////////////////////@at-root
+/////////////////////////ICONS///////////////////////////////////////////////@at-root
+//////////////////////////////////////////////////////////////////////////////////////////
 ion-icon {
   color: $color-white;
   font-size: 40px;
