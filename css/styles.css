@@ -1,16 +1,4 @@
 @charset "UTF-8";
-/*
-  900-1200 - tablet landscape
-[1200-1800] Normal Styles apply
-
-*$breakpoint argument choices
-- phone 600px
-- tab-port 900px
-- tab-land 1200px
-
-1em = 16px
-*/
-/* Defines an animation called "moveInLeft" */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -21,7 +9,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-/* Defines an animation called "moveInRight" */
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -32,7 +19,6 @@
     opacity: 1;
     transform: translate(0); } }
 
-/* Defines an animation called "moveInBottom" */
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -47,37 +33,28 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0px 0px 20px 0px #8f78fd; }
+    box-shadow: 0px 0px 20px 5px #8f78fd; }
   50% {
     box-shadow: 0px 0px 20px 0px rgba(143, 120, 253, 0.75); }
   70% {
     box-shadow: 0px 0px 20px 0px rgba(143, 120, 253, 0.75); }
   100% {
-    box-shadow: 0px 0px 20px 0px #8f78fd; } }
+    box-shadow: 0px 0px 20px 5px #8f78fd; } }
 
-/* *-selector individually selects all elements blocking parent/child inheritance vs html/body which considers inheritence */
 *,
 *::after,
 *::before {
-  /* Gets rid of all broser default margins/paddings/borders to build from scratch */
   margin: 0;
   padding: 0;
-  /*Forces box-sizing to be an inherited property, carrying over from parent element to child element*/
   box-sizing: inherit; }
 
 html {
-  /* Using 10px makes it easier to calculate later sizes using rem: 1rem=10px, 2rem= 20px, etc. */
-  /* Default browser font-size is 16px, to get 10px: .625*16px=10px */
-  /*  Defines what 1 rem is */
-  font-size: 62.5%;
-  scroll-behavior: smooth; }
+  font-size: 62.5%; }
   @media (max-width: 56.25em) {
     html {
       font-size: 56.25%; } }
 
 body {
-  /*A good practice to put in body, making it easier to use plug-ins, *-selector above makes sure this is inherited by all elements */
-  /* border-box causes padding and border to be included in in total width/height of element for more inutuitive experience */
   box-sizing: border-box;
   background-color: #0a0a0a;
   padding: 3rem; }
@@ -97,30 +74,21 @@ button {
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  /* font-size: 16px; */
   line-height: 1.7; }
 
 .header__heading-primary {
   color: #fff;
   text-transform: uppercase;
-  /* Removes shakiness from animation */
   backface-visibility: hidden;
   margin-bottom: 6rem;
   min-width: 30rem; }
   .header__heading-primary--main {
-    /* Changes span from in-line element, to block */
     display: block;
     font-size: 6rem;
     font-weight: 700;
     letter-spacing: 1rem;
-    /*Calls the custom animation we made below @keyframes*/
     animation-name: moveInLeft;
-    animation-duration: 1s;
-    /*
-    animation-timing-function: ease-out; changes speed of animation
-    animation-iteration-count: 3; number of times animiation is run
-    animation-delay: 3s; delays start time of animation
-    */ }
+    animation-duration: 1s; }
   .header__heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -151,7 +119,7 @@ body {
 .timeline__bullet--date {
   color: #fff;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.9rem;
   font-weight: 700;
   letter-spacing: 0.25rem; }
   @media (max-width: 56.25em) {
@@ -162,13 +130,11 @@ body {
 .timeline__bullet--heading {
   color: #fff;
   text-transform: uppercase;
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.9rem;
   letter-spacing: 0.25rem; }
   @media (max-width: 56.25em) {
     .timeline__bullet--heading {
-      letter-spacing: 0.2rem;
-      font-size: 2.9rem; } }
+      letter-spacing: 0.2rem; } }
   @media (max-width: 37.5em) {
     .timeline__bullet--heading {
       letter-spacing: 0.1rem;
@@ -234,57 +200,59 @@ ion-icon {
     ion-icon {
       font-size: 32px; } }
 
-.btn {
-  /*Pseudo states to style button/link properties */ }
-  .btn:link, .btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1rem 3.5rem;
-    /*Always use when giving padding/height to elements so will not overlap other elements */
-    display: inline-block;
-    border-radius: 10rem;
-    /* Transition should be on initital state of button and will be applied to all pseudo classes*/
-    transition: all 0.2s;
-    /*To provide reference for btn::after (absolute)*/
-    position: relative;
-    font-size: 1.6rem; }
-  .btn:hover {
-    transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(10, 10, 10, 0.2);
-    /*After pseudo element -only- when we have the hoverstate */ }
-    .btn:hover::after {
-      /*Scale increases the size of the element */
-      transform: scaleX(1.4) scaleY(1.6);
-      /* Fades the animation out */
-      opacity: 0; }
-  .btn:active {
-    transform: translateY(-0.1rem);
-    box-shadow: 0 0.5rem 1rem rgba(10, 10, 10, 0.2); }
-  .btn--white {
-    background-color: #fff;
-    color: #777; }
-    .btn--white::after {
-      background-color: #fff; }
-  .btn::after {
-    content: "";
-    display: inline-block;
-    /* Pesudo element is treated as child of element, so % relative to original element size*/
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    /*To put this effect behind the btn */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all 0.4s; }
-  .btn--animated {
-    animation: moveInBottom 0.5s ease-out 0.75s;
-    /*applies animation starting conditions*/
-    animation-fill-mode: backwards; }
-  .btn--card {
-    position: absolute;
-    top: 83%; }
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 3.5rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(10, 10, 10, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(10, 10, 10, 0.2); }
+
+.btn--white {
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
+
+.btn--primary {
+  background-color: rgba(27, 19, 53, 0.25);
+  color: #fff;
+  border: 1px solid #8f78fd; }
+  .btn--primary::after {
+    background-color: rgba(27, 19, 53, 0.25); }
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s; }
+
+.btn--animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards; }
+
+.btn--card {
+  position: absolute;
+  top: 83%; }
 
 .line-break {
   margin: 1rem auto;
@@ -298,9 +266,7 @@ ion-icon {
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  margin: 2rem 2rem 4rem;
-  /* Aligns front and back sides */
-  /* Horizontal flip on mouse hover */ }
+  margin: 2rem 2rem 4rem; }
   .flip-card__align-container {
     position: relative;
     width: 100%;
@@ -309,7 +275,11 @@ ion-icon {
     transition: transform 0.8s;
     transform-style: preserve-3d; }
   .flip-card__link {
-    color: inherit; }
+    color: inherit;
+    cursor: default; }
+    @media (max-width: 75em) {
+      .flip-card__link {
+        cursor: pointer; } }
   .flip-card:hover .flip-card__align-container {
     transform: rotateY(180deg); }
     @media (max-width: 75em) {
@@ -320,10 +290,8 @@ ion-icon {
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
-    /* Safari */
     backface-visibility: hidden;
     border-radius: 25px;
-    box-shadow: 0px 0px 20px 0px #8f78fd;
     animation: pulse 2s infinite; }
   .flip-card__heading {
     position: absolute;
@@ -348,15 +316,19 @@ ion-icon {
   .flip-card__front {
     background-color: #4d4258; }
     .flip-card__front--portfolio {
-      background-image: url(../img/portfolio-card.png), url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+      background-image: url(../img/portfolio-card.jpg), url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat: no-repeat, repeat; }
     .flip-card__front--mane-quiz {
-      background-image: url(../img/mane-quiz-card.png), url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+      background-image: url(../img/mane-quiz-card.jpg), url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
       background-repeat: no-repeat, repeat; }
   .flip-card__back {
     background-color: #4d4258;
     background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
     transform: rotateY(180deg); }
+    @media (max-width: 75em) {
+      .flip-card__back {
+        transform: none;
+        display: none; } }
   .flip-card__details {
     padding: 1rem;
     position: absolute;
@@ -375,19 +347,15 @@ ion-icon {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.25)), url(../img/Acatenango-large.jpg);
-  /*Background fills the page */
+  background-image: linear-gradient(rgba(86, 77, 112, 0.4), rgba(86, 77, 112, 0.4)), url(../img/Acatenango-large.jpg);
   background-size: cover;
-  /*When re-sizing image, trims from this direction */
   background-position: top;
-  /* Parent element to "logo-box/logo" classes, relative creates reference/origin for positioning */
   position: relative;
-  /*Trims/shapes/crops image: Use "Clippy" tool to play with this feature*/
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
   margin-bottom: 3rem; }
   @media (max-width: 75em) {
     .header {
-      background-image: linear-gradient(to right bottom, rgba(86, 77, 112, 0.5), rgba(77, 66, 88, 0.25)), url(../img/Acatenango-small.jpg); } }
+      background-image: linear-gradient(rgba(86, 77, 112, 0.4), rgba(86, 77, 112, 0.4)), url(../img/Acatenango-small.jpg); } }
   .header__logo-box {
     position: fixed;
     top: 4rem;
@@ -401,9 +369,7 @@ ion-icon {
     position: absolute;
     top: 40%;
     left: 50%;
-    /*Centers the box, makes top/left positioning go from center rather than edge*/
     transform: translate(-50%, -50%);
-    /*This is actually important to center the button within this text box*/
     text-align: center; }
 
 .timeline__line--tip {
@@ -515,21 +481,16 @@ ion-icon {
           width: 1.5rem;
           margin: 0 0.5rem 0 0.35rem; } }
       .timeline__bullet--point:hover {
-        margin-right: 2rem;
-        /*After pseudo element -only- when we have the hoverstate */ }
+        margin-right: 2rem; }
         .timeline__bullet--point:hover::after {
-          /*Scale increases the size of the element */
           transform: scaleX(4) scaleY(4);
-          /* Fades the animation out */
           opacity: 0; }
       .timeline__bullet--point::after {
         content: "";
-        /* Pesudo element is treated as child of element, so % relative to original element size*/
         height: 100%;
         width: 100%;
         background-color: #8d35ff;
         border-radius: 50%;
-        /*To put this effect behind */
         position: absolute;
         top: 0;
         left: 0;
@@ -632,18 +593,10 @@ ion-icon {
   color: #8d35ff; }
 
 .skills {
-  margin: 5rem auto;
-  max-width: 95rem; }
+  margin: 5rem auto; }
   .skills__section-container {
-    background-color: #4d4258;
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    padding: 1rem 1rem 3rem;
-    margin: 2rem;
-    border-radius: 25px;
-    box-shadow: 0px 0px 20px 0px #8f78fd; }
-  .skills__subheading {
-    margin: auto;
-    width: 70rem; }
+    background-image: linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(77, 66, 88, 0.95) 5%, rgba(77, 66, 88, 0.95) 95%, rgba(10, 10, 10, 0.95) 100%), url(../img/topography7.png);
+    padding: 3rem 1rem 4rem; }
   .skills__list-container {
     display: flex;
     justify-content: center;
@@ -654,7 +607,8 @@ ion-icon {
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: center; }
+    justify-content: center;
+    max-width: 95rem; }
     .skills__list--item + .skills__list--item:before {
       color: #aa99ff;
       content: " ∙";

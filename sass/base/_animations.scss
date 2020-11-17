@@ -1,5 +1,5 @@
 
-/* Defines an animation called "moveInLeft" */
+// /* Defines an animation called "moveInLeft" */
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -16,7 +16,7 @@
   }
 }
 
-/* Defines an animation called "moveInRight" */
+// /* Defines an animation called "moveInRight" */
 @keyframes moveInRight {
   0% {
     opacity: 0;
@@ -33,7 +33,7 @@
   }
 }
 
-/* Defines an animation called "moveInBottom" */
+// /* Defines an animation called "moveInBottom" */
 @keyframes moveInBottom {
   0% {
     opacity: 0;
@@ -55,7 +55,7 @@
 // Defines pulse animation
 @keyframes pulse {
 	0% {
-		box-shadow: 0px 0px 20px 0px rgba($color-primary-light, 1);
+		box-shadow: 0px 0px 20px 5px rgba($color-primary-light, 1);
 	}
 
 	50% {
@@ -67,6 +67,6 @@
   }
   
   100% {
-		box-shadow: 0px 0px 20px 0px rgba($color-primary-light, 1);
+		box-shadow: 0px 0px 20px 5px rgba($color-primary-light, 1);
 	}
 }

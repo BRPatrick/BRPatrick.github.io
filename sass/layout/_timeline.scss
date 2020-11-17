@@ -159,25 +159,25 @@
       &:hover {
         margin-right: 2rem;
 
-        /*After pseudo element -only- when we have the hoverstate */
+        // /*After pseudo element -only- when we have the hoverstate */
         &::after {
-          /*Scale increases the size of the element */
+          // /*Scale increases the size of the element */
           transform: scaleX(4) scaleY(4);
 
-          /* Fades the animation out */
+          // /* Fades the animation out */
           opacity: 0;
         }
       }
 
       &::after {
         content: "";
-        /* Pesudo element is treated as child of element, so % relative to original element size*/
+        // /* Pesudo element is treated as child of element, so % relative to original element size*/
         height: 100%;
         width: 100%;
         background-color: $color-primary;
         border-radius: 50%;
 
-        /*To put this effect behind */
+        // /*To put this effect behind */
         position: absolute;
         top: 0;
         left: 0;

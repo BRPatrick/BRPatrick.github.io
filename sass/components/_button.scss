@@ -1,20 +1,20 @@
 .btn {
-  /*Pseudo states to style button/link properties */
+  // /*Pseudo states to style button/link properties */
   &:link,
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
     padding: 1rem 3.5rem;
 
-    /*Always use when giving padding/height to elements so will not overlap other elements */
+    // /*Always use when giving padding/height to elements so will not overlap other elements */
     display: inline-block;
 
     border-radius: 10rem;
 
-    /* Transition should be on initital state of button and will be applied to all pseudo classes*/
+    // /* Transition should be on initital state of button and will be applied to all pseudo classes*/
     transition: all 0.2s;
 
-    /*To provide reference for btn::after (absolute)*/
+    // /*To provide reference for btn::after (absolute)*/
     position: relative;
 
     font-size: 1.6rem;
@@ -24,12 +24,12 @@
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
-    /*After pseudo element -only- when we have the hoverstate */
+    // /*After pseudo element -only- when we have the hoverstate */
     &::after {
-      /*Scale increases the size of the element */
+      // /*Scale increases the size of the element */
       transform: scaleX(1.4) scaleY(1.6);
 
-      /* Fades the animation out */
+      // /* Fades the animation out */
       opacity: 0;
     }
   }
@@ -48,16 +48,26 @@
     }
   }
 
+  &--primary {
+    background-color: rgba($color-primary-dark-3, 0.25);
+    color: $color-white;
+    border: 1px solid $color-primary-light;
+
+    &::after {
+      background-color: rgba($color-primary-dark-3, 0.25);
+    }
+  }
+
   &::after {
     content: "";
     display: inline-block;
 
-    /* Pesudo element is treated as child of element, so % relative to original element size*/
+    // /* Pesudo element is treated as child of element, so % relative to original element size*/
     height: 100%;
     width: 100%;
     border-radius: 10rem;
 
-    /*To put this effect behind the btn */
+    // /*To put this effect behind the btn */
     position: absolute;
     top: 0;
     left: 0;
@@ -69,7 +79,7 @@
   &--animated {
     animation: moveInBottom 0.5s ease-out 0.75s;
 
-    /*applies animation starting conditions*/
+    // /*applies animation starting conditions*/
     animation-fill-mode: backwards;
   }
 

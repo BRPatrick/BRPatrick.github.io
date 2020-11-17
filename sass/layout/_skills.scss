@@ -1,20 +1,28 @@
 .skills {
   margin: 5rem auto;
-  max-width: 95rem;
+  // max-width: 95rem;
 
   &__section-container {
-    background-color: $color-primary-dark-2;
-    background-image: $background-texture-3;
-    padding: 1rem 1rem 3rem;
-    margin: 2rem;
-    border-radius: 25px;
-    box-shadow: 0px 0px 20px 0px $color-primary-light;
+    // background-color: $color-primary-dark-2;
+    // background-image: $background-texture-3;
+    // background-image: linear-gradient(rgba($color-primary-dark-2, .95),
+    //     rgba($color-primary-dark-2, .95)),
+    //   url(../img/topography7.png);
+
+    background-image: linear-gradient(180deg, rgba($color-black, .95) 0%, 
+    rgba($color-primary-dark-2, .95) 5%,
+     rgba($color-primary-dark-2, .95) 95%, 
+     rgba($color-black, .95) 100%),
+      url(../img/topography7.png);
+
+    padding: 3rem 1rem 4rem;
+    // border-top: 2px solid $color-primary-light;
+    // border-bottom: 2px solid $color-primary-light;
+
+    // border-radius: 25px;
+    // box-shadow: 0px 0px 20px 0px $color-primary-light;
   }
 
-  &__subheading {
-    margin: auto;
-    width: 70rem;
-  }
 
   &__list-container {
     display: flex;
@@ -29,9 +37,10 @@
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+    max-width: 95rem;
 
     &--item {
-      & + &:before {
+      &+&:before {
         color: $color-primary-light-2;
         content: " ∙";
         margin: 0 0.5rem;

@@ -1,15 +1,15 @@
-// MEDIA QUERY MANAGER
-/*
-  900-1200 - tablet landscape
-[1200-1800] Normal Styles apply
+// // MEDIA QUERY MANAGER
+// /*
+//   900-1200 - tablet landscape
+// [1200-1800] Normal Styles apply
 
-*$breakpoint argument choices
-- phone 600px
-- tab-port 900px
-- tab-land 1200px
+// *$breakpoint argument choices
+// - phone 600px
+// - tab-port 900px
+// - tab-land 1200px
 
-1em = 16px
-*/
+// 1em = 16px
+// */
 @mixin respond($breakpoint) {
   @if $breakpoint == phone {
     @media (max-width: 37.5em) {
