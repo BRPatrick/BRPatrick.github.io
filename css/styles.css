@@ -45,6 +45,16 @@
   to {
     transform: rotate(360deg); } }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0px 0px 20px 0px #8f78fd; }
+  50% {
+    box-shadow: 0px 0px 20px 0px rgba(143, 120, 253, 0.75); }
+  70% {
+    box-shadow: 0px 0px 20px 0px rgba(143, 120, 253, 0.75); }
+  100% {
+    box-shadow: 0px 0px 20px 0px #8f78fd; } }
+
 /* *-selector individually selects all elements blocking parent/child inheritance vs html/body which considers inheritence */
 *,
 *::after,
@@ -281,14 +291,14 @@ ion-icon {
   background-color: #8f78fd;
   border: none;
   height: 2px;
-  width: 20vw; }
+  width: 25rem; }
 
 .flip-card {
   background-color: transparent;
   width: 300px;
   height: 400px;
   perspective: 1000px;
-  margin: 2rem;
+  margin: 2rem 2rem 4rem;
   /* Aligns front and back sides */
   /* Horizontal flip on mouse hover */ }
   .flip-card__align-container {
@@ -298,8 +308,13 @@ ion-icon {
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d; }
+  .flip-card__link {
+    color: inherit; }
   .flip-card:hover .flip-card__align-container {
     transform: rotateY(180deg); }
+    @media (max-width: 75em) {
+      .flip-card:hover .flip-card__align-container {
+        transform: none; } }
   .flip-card__front, .flip-card__back {
     position: absolute;
     width: 100%;
@@ -308,7 +323,8 @@ ion-icon {
     /* Safari */
     backface-visibility: hidden;
     border-radius: 25px;
-    box-shadow: 0px 0px 20px 0px #8f78fd; }
+    box-shadow: 0px 0px 20px 0px #8f78fd;
+    animation: pulse 2s infinite; }
   .flip-card__heading {
     position: absolute;
     width: 100%;
@@ -443,10 +459,6 @@ ion-icon {
     .timeline__line--tail {
       margin-left: 1.1rem; } }
 
-.timeline__subheading {
-  margin: auto;
-  width: 75vw; }
-
 .timeline {
   display: flex;
   flex-direction: column;
@@ -466,7 +478,7 @@ ion-icon {
         background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #1b1335 20%, #1b1335 80%, rgba(0, 0, 0, 0) 100%); } }
     .timeline__bullet:focus, .timeline__bullet:hover {
       background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #1b1335 50%, #1b1335 80%, rgba(0, 0, 0, 0) 100%);
-      outline: 0; }
+      cursor: pointer; }
       @media (max-width: 37.5em) {
         .timeline__bullet:focus, .timeline__bullet:hover {
           background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, #1b1335 20%, #1b1335 80%, rgba(0, 0, 0, 0) 100%); } }
@@ -503,7 +515,7 @@ ion-icon {
           width: 1.5rem;
           margin: 0 0.5rem 0 0.35rem; } }
       .timeline__bullet--point:hover {
-        margin-right: 1rem;
+        margin-right: 2rem;
         /*After pseudo element -only- when we have the hoverstate */ }
         .timeline__bullet--point:hover::after {
           /*Scale increases the size of the element */
@@ -544,6 +556,9 @@ ion-icon {
     @media (max-width: 37.5em) {
       .timeline__paragraph {
         margin-left: 1.1rem; } }
+  .timeline__subheading {
+    margin: auto;
+    width: 75vw; }
   .timeline__list {
     display: flex;
     align-items: center;
@@ -618,13 +633,21 @@ ion-icon {
 
 .skills {
   margin: 5rem auto;
-  max-width: 90rem; }
+  max-width: 95rem; }
+  .skills__section-container {
+    background-color: #4d4258;
+    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+    padding: 1rem 1rem 3rem;
+    margin: 2rem;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 0px #8f78fd; }
   .skills__subheading {
     margin: auto;
     width: 70rem; }
   .skills__list-container {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+    text-align: center; }
   .skills__list {
     list-style-type: none;
     margin: auto;
@@ -636,14 +659,6 @@ ion-icon {
       color: #aa99ff;
       content: " ∙";
       margin: 0 0.5rem; }
-
-.skills__section-container {
-  background-color: #4d4258;
-  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23aa99ff' fill-opacity='0.09' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-  padding: 1rem;
-  margin: 2rem;
-  border-radius: 25px;
-  box-shadow: 0px 0px 20px 0px #8f78fd; }
 
 .footer {
   padding: 3rem;

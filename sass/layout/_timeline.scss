@@ -67,10 +67,6 @@
   }
 }
 
-.timeline__subheading {
-  margin: auto;
-  width: 75vw;
-}
 
 .timeline {
   display: flex;
@@ -107,7 +103,7 @@
         $color-primary-dark-3 80%,
         rgba(0, 0, 0, 0) 100%
       );
-      outline: 0;
+      cursor: pointer;
 
       @include respond(phone) {
         background: linear-gradient(
@@ -161,7 +157,7 @@
       }
 
       &:hover {
-        margin-right: 1rem;
+        margin-right: 2rem;
 
         /*After pseudo element -only- when we have the hoverstate */
         &::after {
@@ -224,6 +220,11 @@
     @include respond(phone) {
       margin-left: $margin-timeline-phone;
     }
+  }
+
+  &__subheading {
+    margin: auto;
+    width: 75vw;
   }
 
   &__list {
