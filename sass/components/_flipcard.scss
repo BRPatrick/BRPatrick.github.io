@@ -51,6 +51,9 @@
     border-top: 1px solid $color-primary-light;
     border-bottom: 1px solid $color-primary-light;
     background: rgba($color-primary-dark-3, 0.5);
+    -webkit-backface-visibility: hidden;
+    // /* Safari */
+    backface-visibility: hidden;
 
     &--main {
       top: 260px;
@@ -107,6 +110,7 @@
   }
 
   &__details {
+
     padding: 1rem;
     position: absolute;
     margin-top: 2rem;

@@ -298,7 +298,9 @@ ion-icon {
     width: 100%;
     border-top: 1px solid #8f78fd;
     border-bottom: 1px solid #8f78fd;
-    background: rgba(27, 19, 53, 0.5); }
+    background: rgba(27, 19, 53, 0.5);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
     .flip-card__heading--main {
       top: 260px; }
     .flip-card__heading--sub {
